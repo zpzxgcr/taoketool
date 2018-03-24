@@ -1,7 +1,7 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
-const send = require('bindings')('win');
+var demo = require("bindings")('demo')
   // 保持一个对于 window 对象的全局引用，如果你不这样做，
   // 当 JavaScript 对象被垃圾回收， window 会被自动地关闭
   let win
@@ -12,7 +12,7 @@ const send = require('bindings')('win');
   
     // 然后加载应用的 index.html。
     win.loadURL(url.format({
-      pathname: path.join(__dirname, './src/index.html'),
+      pathname: path.join(__dirname, '/index.html'),
       protocol: 'file:',
       slashes: true
     }))
